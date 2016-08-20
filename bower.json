@@ -1,0 +1,25 @@
+{
+  "name": "markdown-html-ast",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/websemantics/markdown-html-ast",
+  "authors": [
+    "Adnan <adnan@websemantics.ca>"
+  ],
+  "description": "Simplified Markdown to HTML parser",
+  "keywords": [
+    "ast",
+    "markdown",
+    "html"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "remark": "*"
+  }
+}

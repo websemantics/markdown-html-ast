@@ -1,0 +1,30 @@
+{
+  "name": "markdown-html-ast",
+  "version": "1.0.0",
+  "description": "Simplified Markdown to HTML parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/websemantics/markdown-html-ast.git"
+  },
+  "keywords": [
+    "ast",
+    "markdown",
+    "html"
+  ],
+  "author": {
+    "name": "Adnan M.Sagar, PhD.",
+    "email": "adnan@websemantics.ca"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/websemantics/markdown-html-ast/issues"
+  },
+  "dependencies": {
+    "remark": "*"
+  },
+  "homepage": "https://github.com/websemantics/markdown-html-ast#readme"
+}
