@@ -60,7 +60,7 @@
      *
      * @param {Object} opts - Options, name value pairs.
      * @return {void}
-     * /
+     */
 
     me.defaults = function (opts) {
         var key
@@ -76,7 +76,7 @@
      * 
      * @param {string} src - Markdown content.
      * @return {Object}
-     * /
+     */
 
     me.parse = function (src) {
         var ast = remark().parse(src)
