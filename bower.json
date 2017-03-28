@@ -1,10 +1,10 @@
 {
   "name": "markdown-html-ast",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/websemantics/markdown-html-ast",
   "authors": [
-    "Adnan <adnan@websemantics.ca>"
+    "Adnan M.Sagar, PhD. <adnan@websemantics.ca>"
   ],
   "description": "Simplified Markdown to HTML parser",
   "keywords": [
