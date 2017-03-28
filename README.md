@@ -24,7 +24,6 @@
 ```
 > Simplified Markdown to HTML parser
 
-
 ## Install
 
 Bower
@@ -39,7 +38,6 @@ NPM
 npm i markdown-html-ast
 ```
 
-
 ## Getting Started
 
 This package provides a simple parser that transforms `markdown` code to a simple `HTML` Abstract Syntax Tree (AST).
@@ -48,7 +46,6 @@ To demonstrate how to use, let's read a `README.md` file from a Github repositor
 
 
 ```javascript
-
 Gitters.fetch('websemantics/pyrocms-cheatsheet', 'README.md', function(file) {
 
   var tree = parse(file.content)
@@ -58,13 +55,18 @@ Gitters.fetch('websemantics/pyrocms-cheatsheet', 'README.md', function(file) {
 })
 ```
 
+## Support
 
-## Contributions
+Need help or have a question? post at [StackOverflow](https://stackoverflow.com/questions/tagged/markdown-html-ast+websemantics).
 
-This project is in development and your contributions are always welcome!
+*Please don't use the issue trackers for support/questions.*
 
+*Star if you find this project useful, to show support or simply for being awesome :)*
+
+## Contribution
+
+Contributions to this project are accepted in the form of feedback, bugs reports and even better - pull requests.
 
 ## License
 
-[MIT license](http://opensource.org/licenses/mit-license.php)
-Copyright (c) Web Semantics, Inc.
+[MIT license](http://opensource.org/licenses/mit-license.php) Copyright (c) Web Semantics, Inc.
