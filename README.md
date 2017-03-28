@@ -51,7 +51,6 @@ Gitters.fetch('websemantics/pyrocms-cheatsheet', 'README.md', function(file) {
   var tree = parse(file.content)
 
   console.log(tree)
-
 })
 ```
 

@@ -1,32 +1,26 @@
 /**
  *
- *            __   __  _____  _____    __   _  _____   _____  _     _  __    _
- *           |  |_|  ||  _  ||   _ |  |  | | ||     | |     || | _ | ||  |  | |
- *           |       || |_| ||  | ||  |  |_| ||  _   ||  _  || || || ||   |_| |
- *           |       ||     ||  |_||_ |     _|| | |  || | | ||       ||       |
- *           |       ||     ||   __  ||    |_ | |_|  || |_| ||       ||  _    |
- *           | ||_|| ||  _  ||  |  | ||   _  ||      ||     ||   _   || | |   |
- *           |_|   |_||_| |_||__|  |_||__| |_||_____| |_____||__| |__||_|  |__|
- *
- *             ___ ____    _  _ ___ _  _ _       ___  ____ ____ ____ ____ ____
- *              |  |  |    |__|  |  |\/| |       |__] |__| |__/ [__  |___ |__/
- *              |  |__|    |  |  |  |  | |___    |    |  | |  \ ___] |___ |  \
- *
- *             \____  __ __    ____       __    ____    __  ________  _ ____/
- *                 \________     _   \__   \      ____/             ____/
- *                        \_____  \__   \   |    /         _________/
- *                             \________   __      ________/
- *                                      \     \   /   /
- *                                      |         __ |
- *                                      |        __  |
- *                                      |            |
- *                                      |   ___  _   |
- *                                      |_           |
- *                                      |            |
- *                                   __/ / |   |   \  \___
- *                                __ _ _  _  _    _ _ __ ___
- *
- *
+ *     ╭────┬───┬──╮╭──────╮╭───┬──╮╭───╮ ╭──╮  ╭────╮╭──────╮╭───╮╭──╮╭──╮╭────┬─╮
+ *     │           │├────  ││      ││   │╭╯ ╭╯╭─╯    ││   ╭╮ ││   ││  ││  ││      │
+ *     │   ╭╮  ╭╮  ││ ╭╮   ││    ╭─╯│   ╰╯ ╭╯ │ ╭╮   ││   ││ ││   ╰╯  ╰╯  ││   ╭╮ │
+ *     │   ││  ││  ││ ╰╯   ││    │  │   ╭╮ ╰╮ │ ╰╯   ││   ╰╯ ││           ││   ││ │
+ *     ╰───╯╰──╯╰──╯╰───┴──╯╰────╯  ╰───╯╰──╯ ╰─┴────╯╰──────╯╰────┴───┴──╯╰───╯╰─╯
+ *          ╭┬╮  ╭─╮      ┬ ┬  ╭┬╮  ╭┬╮  ┬        ╭─╮  ╭─╮  ┬─╮  ╭─╮  ╭─╮  ┬─╮
+ *           │   │ │      ├─┤   │   │││  │        ├─╯  ├─┤  ├┬╯  ╰─╮  ├┤   ├┬╯
+ *           ┴   ╰─╯      ┴ ┴   ┴   ┴ ┴  ┴─╯      ┴    ┴ ┴  ┴╰─  ╰─╯  ╰─╯  ┴╰─
+ *            \____  __ __    ____       __    ____    __  ________  _ ____/
+ *                \________     _   \__   \      ____/             ____/
+ *                       \_____  \__   \   |    /         _________/
+ *                            \________   __      ________/
+ *                                     \     \   /   /
+ *                                     |         __ |
+ *                                     |        __  |
+ *                                     |            |
+ *                                     |   ___  _   |
+ *                                     |_           |
+ *                                     |            |
+ *                                  __/ / |   |   \  \___
+ *                               __ _ _  _  _    _ _ __ ___
  *
  * This project was released under MIT license.
  *
@@ -35,18 +29,12 @@
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.ca>
  */
 
-;
-(function(root, factory) {
+
+;(function(root, factory) {
     if (typeof define === 'function' && define.amd) {
-        define(['remark'],
-            function() {
-                return (root.MDtree = factory(remark))
-            })
-    } else if (typeof module === 'object' && module.exports) {
-        module.exports = factory(require('remark'))
-    } else {
-        root.MDtree = factory(root.remark)
-    }
+        define(['remark'], function() { return (root.MDtree = factory(remark)) })
+    } else if (typeof module === 'object' && module.exports) { module.exports = factory(require('remark'))
+    } else { root.MDtree = factory(root.remark) }
 }(this, function(remark) {
 
     var root = this || global
@@ -54,11 +42,10 @@
         VERSION: '1.0.0'
     }
 
-    /* Library defaults, can be changed using the 'defaults' member method,
-
-		- debug (boolean), turns debug mode off / on
-
-    */
+    /**
+     * @var {Object} defaults - Library defaults, can be changed using the 'defaults' member method
+     * @property {boolean} debug - turns debug mode off / on
+     */
 
     var defaults = {
         debug: true,
@@ -66,14 +53,14 @@
 
     // -------------------------------------------------------------------------
     // Public methods
+    // -------------------------------------------------------------------------
 
-    /*
-      Override class defaults
-
-        Parameters:
-        - opts (object): name value pairs
-
-    */
+    /**
+  	 * Override class defaults.
+  	 *
+  	 * @param {Object} opts - Options, name value pairs.
+  	 * @return {void}
+  	 */
 
     me.defaults = function(opts) {
         var key
@@ -84,30 +71,29 @@
         }
     }
 
-    // -------------------------------------------------------------------------
-    // Public methods
-
-    /*
-        Parse Markdown and return a simplified HTML tree object
-
-          Parameters:
-          - src (string): markdown
-
-  	*/
+    /**
+  	 * Parse Markdown and return a simplified HTML tree object.
+  	 *
+  	 * @param {string} src - Markdown content.
+  	 * @return {Object}
+  	 */
 
     me.parse = function(src) {
         var ast = remark().parse(src)
         return build(ast, src)
     }
 
-    /*
-        Build a Simplified HTML tree from Markdown source
+    // -------------------------------------------------------------------------
+    // Private methods
+    // -------------------------------------------------------------------------
 
-          Parameters:
-          - node (object): an ast node object
-          - src (string): markdown
-
-  	*/
+    /**
+  	 * Build a Simplified HTML tree from Markdown source.
+  	 *
+  	 * @param {Object} node - Ast node object.
+  	 * @param {string} src - Markdown content.
+  	 * @return {Object}
+  	 */
 
     function build(node, src) {
 
@@ -179,17 +165,13 @@
         return node
     }
 
+    /**
+  	 * Log a message to the console.
+  	 *
+  	 * @param {string} message - Print out if in debug mode.
+  	 * @return {void}
+  	 */
 
-    // -------------------------------------------------------------------------
-    // Private methods
-
-    /*
-          Log a message to the console
-
-            Parameters:
-    				- message (string): print out if in debug mode
-
-    */
     function log(message) {
         if (defaults.debug) {
             console.log(message)
